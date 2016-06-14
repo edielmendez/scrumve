@@ -1,0 +1,13 @@
+.card{
+  width: 250px;
+  float: left;
+  display: inline-block;
+  margin: 20px;
+}
+.card-panel{
+  height: 600px;
+}
+
+.nuevoSprint{
+  padding: 40px;
+}
