@@ -13,7 +13,7 @@
 
       <li><a href="#!"></a></li>
       <li class="divider"></li>
-      <li><a href="home/logout">Cerrar Sesion</a></li>
+      <li><a href="<?php echo base_url();?>index.php/Home/logout">Cerrar Sesion</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">

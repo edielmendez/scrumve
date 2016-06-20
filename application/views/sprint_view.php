@@ -19,16 +19,17 @@
 
       <li><a href="#!"></a></li>
       <li class="divider"></li>
-      <li><a href="home/logout">Cerrar Sesion</a></li>
+      <li><a href="<?php echo base_url();?>index.php/Home/logout">Cerrar Sesion</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">
-        <!--<a href="#!" class="brand-logo">SCRUMVE</a>-->
-
-        <ul class="left hide-on-med-and-down">
-          <li><a class="waves-effect waves-light btn" href="<?php echo base_url();?>index.php/Project/index/<?php echo $data['id_parent'] ?>">sprints</a></li>
+        <a href="#!" class="brand-logo center">SCRUMVE</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="<?php echo base_url();?>index.php/Home/" >PROYECTOS</a></li>
+          <li><a href="<?php echo base_url();?>index.php/Personal/">PERSONAL</a></li>
+          <li><a href="<?php echo base_url();?>index.php/Project/index/<?php echo $data['id_parent']; ?>">REGRESAR</a></li>
+          
         </ul>
-        <a href="#" class="brand-logo center"><img src="<?php echo base_url('libs/images/logo.jpeg'); ?>" alt="" /></a>
         <ul class="right hide-on-med-and-down">
 
           <!-- Dropdown Trigger -->
@@ -201,6 +202,7 @@
       <?php
       echo form_open('Sprint/add_actividad');
       echo "<input type='hidden' name='id' value='".$sprint['id']."'>";
+      echo "<input type='hidden' name='id_parent' value='".$data['id_parent']."'>";
       echo "<div class='fixed-action-btn horizontal click-to-toggle' style='top: 500px; left: 230px;'>";
         echo "<button class='btn-floating btn-large red'  type='submit'>";
           echo "<i class='material-icons'>add</i>";

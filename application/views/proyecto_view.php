@@ -18,17 +18,16 @@
 
       <li><a href="#!"></a></li>
       <li class="divider"></li>
-      <li><a href="home/logout">Cerrar Sesion</a></li>
+      <li><a href="<?php echo base_url();?>index.php/Home/logout">Cerrar Sesion</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">
-        <!--<a href="#!" class="brand-logo">SCRUMVE</a>-->
-
-        <ul class="left hide-on-med-and-down">
-          <li><a class="waves-effect waves-light btn" href="<?php echo base_url();?>index.php/home">proyectos</a></li>
-          <li><a class="waves-effect waves-light btn" href="<?php echo base_url();?>index.php/Personal">Personal</a></li>
+        <a href="#!" class="brand-logo center">SCRUMVE</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="<?php echo base_url();?>index.php/Home/" >PROYECTOS</a></li>
+          <li><a href="<?php echo base_url();?>index.php/Personal/">PERSONAL</a></li>
+          <li class="active"><a href="<?php echo base_url();?>index.php/Home/">REGRESAR</a></li>
         </ul>
-        <a href="#" class="brand-logo center"><img src="<?php echo base_url('libs/images/logo.jpeg'); ?>" alt="" /></a>
         <ul class="right hide-on-med-and-down">
 
           <!-- Dropdown Trigger -->
@@ -59,11 +58,11 @@
         for ($i=0; $i < count($sprints); $i++) {
           # code...
           echo "<div class='card'>";
-              echo "<div class='card-image'>";
+              echo "<!--<div class='card-image'>";
                 echo "<div class='chip'>".$sprints[$i]['numero'];
                   echo "<i class='material-icons'>close</i>";
                 echo "</div>";
-              echo "</div>";
+              echo "</div>-->";
               echo "<div class='card-content'>";
                 echo "<p>".$sprints[$i]['descripcion']."</p>";
                 echo "<br>";
@@ -91,7 +90,7 @@
                   echo "Ver Tablero<!--<i class='material-icons right'>send</i>-->";
                 echo "</button>";
                 echo "</form>";*/
-                echo "<a href='../../Sprint/index/".$sprints[$i]['id']."/".$proyecto['id']."'>Entrar</a>";
+                echo "<a href='".base_url()."index.php/Sprint/index/".$sprints[$i]['id']."/".$proyecto['id']."'>Entrar</a>";
                 echo "<br>";
                 echo "<br>";
 
@@ -103,7 +102,7 @@
                   echo "<i class='material-icons right'>mode_edit</i>";
                 echo "</button>";
                 echo "</form>";*/
-                echo "<a href='../../Sprint/update/".$sprints[$i]['id']."' class='btn waves-effect blue darken-1'><i class='material-icons right'>mode_edit</i></a>";
+                echo "<a href='".base_url()."index.php/Sprint/update/".$sprints[$i]['id']."' class='btn waves-effect blue darken-1'><i class='material-icons right'>mode_edit</i></a>";
                 echo "<br>";
                 echo "<br>";
 

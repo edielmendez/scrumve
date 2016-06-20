@@ -28,22 +28,19 @@ class PersonalModel extends CI_Model
      }
   }
 
-  function crearSprint($numero,$descripcion,$fecha_inicial,$fecha_final,$id_proyecto){
+  function nuevoPersonal($nombre,$email,$habilidades){
     $data = array(
-        'numero' => $numero,
-        'descripcion' => $descripcion,
-        'avanze' => 0,
-        'id_proyecto' => $id_proyecto,
-        'fecha_inicial' => $fecha_inicial,
-        'fecha_final' => $fecha_final,
+        'nombre' => $nombre,
+        'email' => $email,
+        'habilidades' => $habilidades
     );
-    $this->db->insert('sprint', $data);
+    $this->db->insert('personal', $data);
 
-    $id_nuevosprint = $this->db->insert_id();
+    $id_personal= $this->db->insert_id();
 
 
 
-    return  $id_nuevosprint;
+    return  $id_personal;
   }
 
   function getOnePersonal($id){
@@ -64,20 +61,21 @@ class PersonalModel extends CI_Model
     }
   }
 
-  function actualizarProyecto($numero,$descripcion,$avanze,$id_proyecto,$fecha_inicial,$fecha_final,$id){
+  function actualizarPersonal($nombre,$email,$habilidades,$id){
 
     $data = array(
-        'numero' => $numero,
-        'descripcion' => $descripcion,
-        'avanze' => $avanze,
-        'id_proyecto' => $id_proyecto,
-        'fecha_inicial' => $fecha_inicial,
-        'fecha_final' => $fecha_final,
+        'nombre' => $nombre,
+        'email' => $email,
+        'habilidades' => $habilidades
     );
 
     $this->db->where('id', $id);
-    $rowAfects  = $this->db->update('sprint', $data);
+    $rowAfects  = $this->db->update('personal', $data);
     return $rowAfects;
+  }
+
+  function delete($id){
+    return $this->db->delete('personal', array('id' => $id));
   }
 }
 

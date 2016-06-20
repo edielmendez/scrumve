@@ -280,10 +280,11 @@ class Sprint extends CI_Controller {
       }
 
       $id_sprint = $this->input->post('id');
+      $id_parent = $this->input->post('id_parent');
       $session_data = $this->session->userdata('logged_in');
       $data['username'] = $session_data['username'];
       $data['id'] = $id_sprint;
-      
+      $data['id_parent'] = $id_parent;
       $data['personal'] = $personal;
 
       
@@ -298,6 +299,7 @@ class Sprint extends CI_Controller {
     if($this->session->userdata('logged_in')){
 
       $id_sprint = $this->input->post('id');
+      $id_parent = $this->input->post('id_parent');
 
       $nombre = $this->input->post('nombre');
       $descripcion = $this->input->post('descripcion');
@@ -311,7 +313,7 @@ class Sprint extends CI_Controller {
       }else{
         $this->session->set_flashdata('message', 'Actividad No Creada');
       }
-      redirect('Sprint/index/'.$id_sprint);
+      redirect('Sprint/index/'.$id_sprint."/".$id_parent);
       
     }else{
       redirect('login', 'refresh');

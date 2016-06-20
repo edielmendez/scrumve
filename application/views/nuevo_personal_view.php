@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Nuevo Proyecto</title>
+    <title>Nuevo Personal</title>
     <link href="<?php echo base_url('libs/css/materialize.min.css'); ?>" rel="stylesheet" />
     <link href="<?php echo base_url('libs/css/iconos.css'); ?>" rel="stylesheet" />
 
@@ -25,43 +25,47 @@
         </ul>
       </div>
     </nav>
-    <?php //print_r($proyectos); ?>
+    <?php //print_r($personal); ?>
+    
     <div class="container">
-      <h3>Nuevo proyecto</h3>
+      <h3>Nuevo Personal </h3>
 
       <div class="row">
-
-          <?php echo form_open('Project/nuevo',array('class'=>'col s12')); ?>
+          
+          <?php  echo form_open('Personal/nuevo_personal',array('class'=>'col s12','id'=>'')); 
+          ?>
           <div class="row">
             <div class="input-field col s6 offset-s3">
 
-              <input id="icon_prefix" type="text" class="validate" required="" name="nombre">
-              <label for="icon_prefix">Nombre</label>
+              <input  type="text" name="nombre" value=""  required="" />
+              <!--<input  type="hidden"  name="id" value="<?php echo $id; ?>">-->
+              <label for="icon_prefix">Nombre Completo</label>
+            </div>
+
+          </div>
+
+          
+
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+
+              <input  type="email" name="email" value=""  required="" />
+              <!--<input  type="hidden"  name="id" value="<?php echo $id; ?>">-->
+              <label for="icon_prefix">email</label>
             </div>
 
           </div>
 
           <div class="row">
             <div class="input-field col s6 offset-s3">
-              <textarea id="textarea1" class="materialize-textarea" name="descripcion" required=""></textarea>
-              <label for="textarea1">Descripción</label>
+              <textarea id="textarea1" class="materialize-textarea" name="habilidades" required=""></textarea>
+              <label for="textarea1">Habilidades</label>
             </div>
           </div>
 
 
 
 
-          <div class="row">
-            <div class="input-field col s3 offset-s3">
-              <input id="fecha_inicial" type="text" class="datepicker" required="" name="fecha_inicial">
-              <label for="fecha_inicial">Fecha inicial</label>
-            </div>
-            <div class="input-field col s3">
-
-              <input id="fecha_final" type="text" class="datepicker" required="" name="fecha_final">
-              <label for="fecha_final">Fecha final</label>
-            </div>
-          </div>
 
 
           <div class="row">
@@ -70,7 +74,7 @@
 
             </div>
             <div class="input-field col s4">
-              <a class="waves-effect waves-light btn  red lighten-1" href="<?php echo base_url();?>index.php/home">Cancelar</a>
+              <a class="waves-effect waves-light btn  red lighten-1" href="<?php echo base_url();?>index.php/Personal">Cancelar</a>
             </div>
           </div>
 
@@ -78,6 +82,7 @@
         </form>
       </div>
     </div>
+    
 
 
 

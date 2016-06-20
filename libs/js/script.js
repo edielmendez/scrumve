@@ -238,3 +238,21 @@ $(document).on('click','#aceptarEliminarActividad',function(){
 /**
  * 
  */
+
+
+/**
+ * Actualizar eliminar
+ */
+$(document).on('click','.eliminarPersonal',function(){
+  var id = $(this).attr('id');
+  $("#idPersonalEliminar").val(id);
+  $("#modalEliminarPersonal").openModal();
+
+});
+
+$(document).on('click','#btnAceptarEliminarPersonal',function(){
+  var id = $("#idPersonalEliminar").val();
+  window.location.href = "http://127.0.0.1/laravel/index.php/Personal/delete/"+id;
+});
+
+///Fin de eliminar personal

@@ -6,6 +6,8 @@
 }
 .card-panel{
   height: 600px;
+  overflow: scroll;
+  
 }
 
 .nuevoSprint{

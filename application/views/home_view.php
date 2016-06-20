@@ -13,12 +13,17 @@
 
       <li><a href="#!"></a></li>
       <li class="divider"></li>
-      <li><a href="home/logout">Cerrar Sesion</a></li>
+      <li><a href="<?php echo base_url();?>index.php/Home/logout">Cerrar Sesion</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">SCRUMVE</a>
-
+      
+        <a href="#!" class="brand-logo center">SCRUMVE</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a  class="active2" >PROYECTOS</a></li>
+          <li><a href="<?php echo base_url();?>index.php/Personal/">PERSONAL</a></li>
+          
+        </ul>
         <ul class="right hide-on-med-and-down">
 
           <!-- Dropdown Trigger -->
@@ -50,11 +55,11 @@
           echo "<div class='card'>";
             echo "<div class='card-content'>";
               echo "<span class='card-title activator grey-text text-darken-4'>".$proyectos[$i]['nombre']."<i class='material-icons right'>more_vert</i></span>";
-              echo "<p><a href='Project/index/".$proyectos[$i]['id']."'>Entrar</a></p>";
+              echo "<p><a href='".base_url()."index.php/Project/index/".$proyectos[$i]['id']."'>Entrar</a></p>";
 
             echo "</div>";
             echo "<div class='card-action'>";
-              echo "<a href='Project/update/".$proyectos[$i]['id']."'><i class='material-icons left'>mode_edit</i></a>";
+              echo "<a href='".base_url()."index.php/Project/update/".$proyectos[$i]['id']."'><i class='material-icons left'>mode_edit</i></a>";
               echo "<a href='#' id=".$proyectos[$i]['id']." class='eliminarProyecto'><i class='material-icons left'>delete</i></a>";
               echo "<!--<a href='Project/lanzar/".$proyectos[$i]['id']."'>Lanzar<i class='material-icons'></i></a>-->";
             echo "</div>";
@@ -79,7 +84,7 @@
 
         if($i==(count($proyectos)-1)){
           echo "<div class='col s4'>";
-          echo "<a class='waves-effect waves-light btn' href='Project/create'><i class='material-icons right'>queue</i>Nuevo Proyecto</a>";
+          echo "<a class='waves-effect waves-light btn' href='". base_url()."index.php/Project/create'><i class='material-icons right'>queue</i>Nuevo Proyecto</a>";
           echo "</div>";
         }
 

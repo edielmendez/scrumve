@@ -5,14 +5,13 @@ class Login extends CI_Controller {
  function __construct()
  {
    parent::__construct();
+   $this->load->model('proyecto','',TRUE);	
  }
 
  function index()
  {
    if($this->session->userdata('logged_in')){
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-     $this->load->view('home_view', $data);
+     redirect('Home/');
      
    }else{
      $this->load->view('welcome_message.php');

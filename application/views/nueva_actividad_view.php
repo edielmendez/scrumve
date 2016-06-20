@@ -13,7 +13,7 @@
 
       <li><a href="#!"></a></li>
       <li class="divider"></li>
-      <li><a href="home/logout">Cerrar Sesion</a></li>
+      <li><a href="<?php echo base_url();?>index.php/Home/logout">Cerrar Sesion</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">
@@ -35,7 +35,7 @@
           <?php  echo form_open('Sprint/nueva_actividad',array('class'=>'col s12','id'=>'formNuevaActividad')); ?>
           <div class="row">
             <div class="input-field col s6 offset-s3">
-
+              <input  type="hidden" name="id_parent" value="<?php echo $id_parent?>"  required="" />
               <input  type="text" name="nombre" value=""  required="" />
               <input  type="hidden"  name="id" value="<?php echo $id; ?>">
               <label for="icon_prefix">Nombre</label>

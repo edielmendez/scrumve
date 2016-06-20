@@ -13,7 +13,7 @@
 
       <li><a href="#!"></a></li>
       <li class="divider"></li>
-      <li><a href="home/logout">Cerrar Sesion</a></li>
+      <li><a href="<?php echo base_url();?>index.php/Home/logout">Cerrar Sesion</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">
@@ -35,9 +35,9 @@
           <div class="row">
             <div class="input-field col s6 offset-s3">
 
-              <input  type="text" name="numero" value="<?php echo $numero; ?>" />
+              <input  type="hidden" name="numero" value="<?php echo $numero; ?>" />
               <input  type="hidden"  name="id" value="<?php echo $id; ?>">
-              <label for="icon_prefix">Numero</label>
+              <!--<label for="icon_prefix">Numero</label>-->
             </div>
 
           </div>

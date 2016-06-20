@@ -213,7 +213,7 @@ class Project extends CI_Controller {
     if($result){
       $this->session->set_flashdata('message', 'Proyecto Eliminado');
     }else{
-      $this->session->set_flashdata('message', 'Proyectoo No Eliminado');
+      $this->session->set_flashdata('message', 'Proyecto No Eliminado');
     }
     redirect('Home/');
   }

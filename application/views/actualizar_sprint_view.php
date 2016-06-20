@@ -13,7 +13,7 @@
 
       <li><a href="#!"></a></li>
       <li class="divider"></li>
-      <li><a href="home/logout">Cerrar Sesion</a></li>
+      <li><a href="<?php echo base_url();?>index.php/Home/logout">Cerrar Sesion</a></li>
     </ul>
     <nav>
       <div class="nav-wrapper">
@@ -36,8 +36,8 @@
             <div class="input-field col s6 offset-s3">
               <input type="hidden"  name="id" value="<?php echo $sprint['id']; ?>">
               <input type="hidden"  name="id_proyecto" value="<?php echo $sprint['id_proyecto']; ?>">
-              <input id="icon_prefix" type="text" class="validate" required="" name="numero" value="<?php echo $sprint['numero']; ?>">
-              <label for="icon_prefix">Numero</label>
+              <input id="icon_prefix" type="hidden" class="validate" required="" name="numero" value="<?php echo $sprint['numero']; ?>">
+              <!--<label for="icon_prefix">Numero</label>-->
             </div>
 
           </div>
